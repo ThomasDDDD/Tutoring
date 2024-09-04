@@ -9,8 +9,10 @@
 //! ////////////////////////////////////////////////////////////////////////////////////
 
 //! document.querrySelector("string")
+
 //* detectet NUR das erste Element was er findet als Div!
 //* Nicht nur für Tags sondern auch für Id's verwendebar -> weil id's einzigartig im Html sein müssen!
+//TODO: document.querrySelector("div") -> Tag's
 //TODO: document.querrySelector("#blabla") -> ID's
 //* gibt html Element direkt wieder!
 
@@ -30,40 +32,43 @@ secondField.style.border = "1px solid blue";
 //! ////////////////////////////////////////////////////////////////////////////////////
 
 //! document.querrySelectorAll("string")
-//* detectet ALLE  Elemente die auf das Tag passen
-//* Nicht nur für Tags sondern auch für klassen verwendebar
-//TODO: document.querrySelectorAll(".blabla") -> classes
+
+//* detectet ALLE Elemente die auf das html "tag" oder auf ein html mit einer ".class" passen
 //* gibt einen ARRAY zurück gefüllt mit den html Elementen!!!
-//* .methoden können nicht direkt auf die "allDivs" angewendet werden
+//* Nicht nur für Tags sondern auch für klassen verwendebar
+//TODO: document.querrySelectorAll("div") -> Tag's
+//TODO: document.querrySelectorAll(".blabla") -> classes
+//* .methoden können nicht direkt auf die "allDivs" angewendet werden weil es sich um ein Array handelt!
 
+//* Zugriff auf Elemente via html "tag" querySelectorAll("div")
 const allDivs = document.querySelectorAll("div");
-console.log(`Alle div's via querrySelectorAll("div"):\n\n`, `NodeList Array (click to check details):\n`, allDivs);
+console.log(`Alle div's via querrySelectorAll("div"):\n\n`, `"->NodeList Array"(klicke zum öffnen):\n`, allDivs);
 
-//* man kann durch den Array iterieren um auf die einzelnen Elemente dann .methoden anzuwenden
+//* man kann aber durch den Array iterieren um auf die einzelnen Elemente dann .methoden anzuwenden
 
 allDivs.forEach((element) => {
-  console.log("forEach Element of NodeList above: Hello:)");
-  //element.style.fontSize ="2rem";
+  console.log("forEach Element des NodeList Array oberhalb ein Log: Hello:)");
+  //* element.style.fontSize ="2rem";
 });
 
-//? schlechte wahl weil verschiedene Divs enthalten sind, Eltern und Kind divs zusammen im Array (check log zeile 40 im Browser)
+//? für die div tags eine schlechte Wahl, weil verschiedene Divs enthalten sind.
+//? Eltern und Kind divs zusammen im Array (check log zeile 44 im Browser)
 // for (let div of allDivs) {
-//   div.style.width = "10vw";
-//   div.style.height = "5vh";
 //   div.style.border = "1px solid red";
 // }
-
-//* über den Index kann man aber auf einzelne Elemente in dem Array zugreifen
+//* über den Index kann man auch auf einzelne Elemente in dem Array zugreifen
 allDivs[2].style.backgroundColor = "red";
-allDivs[11].style.border = "1px solid green";
+allDivs[11].style.border = "3px solid green";
 
-//* Zugriff auf Element mit klassen via querySelectorAll(".blabla")
+//* Zugriff auf Elemente mit klassen via querySelectorAll(".blabla")
 const fieldsGood = document.querySelectorAll(".field");
 
 console.log(
-  `Nur die div's mit der Klasse "field "via querySelectorAll(".class"):\n\n`,
+  `Nur die div's mit der Klasse "field" via querySelectorAll(".class"):\n\n`,
   `kein problem hier weil NodeList Array.\n`,
-  `dadurch sind higherOrderFunctions möglich!\n\n`,
+  `dadurch sind higherOrderFunctions möglich!\n`,
+  `"->NodeList Array"(klicke zum öffnen):\n`,
+
   fieldsGood
 );
 
