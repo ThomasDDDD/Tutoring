@@ -81,6 +81,10 @@ console.log(`Neuer Inhalt hinzugefügt:\n\n`, chapterTwo);
 
 //? Beispiel: Hinzufügen von Text
 
-chapterTwo.innerText = `<div>Neuer Text hinzugefügt</div>`;
+//* chapterTwo.innerText = `<div>Neuer Text hinzugefügt</div>`;
 
 console.log(`Neuer Text hinzugefügt:\n\n`, chapterTwo);
+
+//! ////////////////////////////////////////////////////////////////////////////////////
+
+//!
